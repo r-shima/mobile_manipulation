@@ -19,29 +19,41 @@ directory contains 6 files: a README.pdf, a csv file of the configurations, a vi
 performing the pick-and-place task in CoppeliaSim, a csv file of Xerr, a png file of the plot of
 Xerr as a function of time, and a txt file showing my program being called in the terminal.
 
-*best:*<br />
+### best
 In best, a well-tuned controller (feedforward-plus-PI with Kp = 7 and Ki = 0.01) was used
 to allow the robot to pick up the cube and place it at a designated location. In the animation, the
 motion was smooth, and there was no oscillation. As shown in the plot, the error converges to
 zero before the end-effector reaches a standoff configuration above the cube. However, there is
 a very little error when the end-effector goes to the final configuration of the cube.
 
-*overshoot:*<br />
+Below is a video of the animation:
+
+https://user-images.githubusercontent.com/113070827/210182194-11fe44eb-e966-4acb-a111-dbebfc898230.mp4
+
+### overshoot
 In overshoot, a less well-tuned controller (feedforward-plus-PI with Kp = 2 and Ki = 7)
 was used to allow the robot to accomplish the same tasks. In the animation, when the robot
 goes to the cube, the end-effector slightly goes past the initial location of the cube, but adjusts
 its position to pick up the cube and continues to move to the final location to place the cube. The
 plot clearly shows that the end-effector oscillates back after it slightly goes past the cube.
 
-*newTask:*<br />
+Below is a video of the animation:
+
+https://user-images.githubusercontent.com/113070827/210182202-ad531150-1023-41d0-a891-423dee9156da.mp4
+
+### newTask
 In newTask, a well-tuned controller (feedforward-plus-PI with Kp = 7 and Ki = 0.01) was
 used to allow the robot to pick up the cube at a different location and place it at a different goal
 location. The initial configuration of the cube was changed to (0.5 m, 0.5 m, 0 rad) and the goal
 configuration of the cube was changed to (0 m, -0.6 m, -1.57079632679 rad) in CoppeliaSim.
 Tsc_initial and Tsc_final were also changed in main_program.py to be used in
-TrajectoryGenerator. Just like in the plot for best, the error converges to zero before the
+`TrajectoryGenerator`. Just like in the plot for best, the error converges to zero before the
 end-effector reaches a standoff configuration above the cube. However, there is a very little
 error when the end-effector goes to the final configuration of the cube.
+
+Below is a video of the animation:
+
+https://user-images.githubusercontent.com/113070827/210182209-e43ffecb-83f5-465c-b417-7676f1d19c92.mp4
 
 ## Important Note
 Please note that main_program.py currently gives you the results for best. To get other
